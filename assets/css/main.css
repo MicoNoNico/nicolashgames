@@ -956,7 +956,7 @@ table tfoot td {
   cursor: pointer;
   position-anchor: --carousel;
   justify-self: center; /* NEW: Center horizontally */
-  bottom: calc(anchor(bottom) - 30px); /* NEW: Position at bottom center */
+  bottom: calc(anchor(bottom) - 30px);
 }
 
 .carousel::scroll-button(*):hover,
@@ -1011,52 +1011,6 @@ table tfoot td {
 
 .carousel li::scroll-marker:target-current {
   background-color: black;
-}
-
-/* Fallback controls for browsers without ::scroll-button/::scroll-marker */
-.carousel-wrap { position: relative; }
-
-.carousel-ui {
-  position: absolute;
-  left: 0; right: 0;
-  bottom: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  pointer-events: none; /* lets clicks pass unless explicitly enabled below */
-  z-index: 2;
-}
-
-.carousel-ui .arrow,
-.carousel-ui .dots button {
-  pointer-events: auto;
-  border: 1px solid #000;
-  background: rgba(255,255,255,0.9);
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.carousel-ui .arrow {
-  width: 36px; height: 36px;
-  line-height: 34px;
-  font-size: 18px;
-}
-
-.carousel-ui .dots { display: flex; gap: 10px; }
-.carousel-ui .dots button {
-  width: 12px; height: 12px;
-  padding: 0;
-}
-
-.carousel-ui .dots button[aria-current="true"] {
-  background: #000; border-color: #000;
-}
-
-@media (max-width: 768px) {
-  .carousel-ui { bottom: 8px; gap: 10px; }
-  .carousel-ui .arrow { width: 32px; height: 32px; font-size: 16px; }
-  .carousel-ui .dots button { width: 10px; height: 10px; }
 }
 
 
@@ -1557,6 +1511,60 @@ a.newer-posts:hover {
   }
   .embed-responsive {
     padding-bottom: 40%;
+  }
+
+  /* Fallback controls for browsers without ::scroll-button/::scroll-marker */
+  .carousel::scroll-button(*),
+  .carousel::scroll-marker-group {
+    display: none !important;
+  }
+
+  .carousel-wrap { position: relative; }
+
+  .carousel-ui {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    pointer-events: none; /* lets clicks pass unless explicitly enabled below */
+    z-index: 2;
+  }
+
+  .carousel-ui .dots button {
+    border: 1px solid #000;
+    background: rgba(255,255,255,0.9);
+    border-radius: 999px;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  .carousel-ui .arrow {
+    width: 36px; 
+    height: 36px;
+    line-height: 34px;
+    font-size: 22px;
+    pointer-events: auto;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .carousel-ui .dots { 
+    display: flex; 
+    gap: 10px; 
+  }
+
+  .carousel-ui .dots button {
+    width: 15px; 
+    height: 15px;
+    padding: 0;
+  }
+
+  .carousel-ui .dots button[aria-current] {
+    background: #000; border-color: #000;
   }
 }
 
