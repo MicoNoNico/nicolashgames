@@ -1013,15 +1013,51 @@ table tfoot td {
   background-color: black;
 }
 
-/* Fallback for mobile carousel buttons */
-.carousel-prev, .carousel-next {
-  position: absolute !important;
-  z-index: 10;
+/* Fallback controls for browsers without ::scroll-button/::scroll-marker */
+.carousel { position: relative; }
+
+.carousel-ui {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none; /* lets clicks pass unless explicitly enabled below */
 }
 
-.carousel-prev:hover, .carousel-next:hover {
-  opacity: 1 !important;
+.carousel-ui .arrow,
+.carousel-ui .dots button {
+  pointer-events: auto;
+  border: 1px solid #000;
+  background: rgba(255,255,255,0.9);
+  border-radius: 999px;
+  cursor: pointer;
 }
+
+.carousel-ui .arrow {
+  width: 36px; height: 36px;
+  line-height: 34px;
+  font-size: 18px;
+}
+
+.carousel-ui .dots { display: flex; gap: 10px; }
+.carousel-ui .dots button {
+  width: 12px; height: 12px;
+  padding: 0;
+}
+
+.carousel-ui .dots button[aria-current="true"] {
+  background: #000; border-color: #000;
+}
+
+@media (max-width: 768px) {
+  .carousel-ui { bottom: 8px; gap: 10px; }
+  .carousel-ui .arrow { width: 32px; height: 32px; font-size: 16px; }
+  .carousel-ui .dots button { width: 10px; height: 10px; }
+}
+
 
 /* - - - - - - - - - - Home Page Styles - - - - - - - - - - */
 .sidebar {
@@ -1661,12 +1697,6 @@ a.newer-posts:hover {
     content: "►";
     left: calc(anchor(center) + 80px);
   }
-
-  .carousel::scroll-button(*),
-  .carousel::scroll-marker-group {
-    display: none !important; /* Hide if browser supports but mobile issues persist */
-  }
-
 }
 
 /* Extra Small Devices, Phones */

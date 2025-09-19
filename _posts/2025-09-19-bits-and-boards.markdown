@@ -12,7 +12,7 @@ Bits and Boards puts you behind the counter of a bustling neighbourhood game sto
 
 You will be in charge of everything that happens on, under, and after that counter. Stock the latest hits, charm every customer, and expand your thriving business.
 
-<ul class="carousel" id="my-carousel">
+<ul class="carousel">
   <li><img src="{{site.baseurl}}/assets/img/shot1.png" alt="Image 1"></li>
   <li><img src="{{site.baseurl}}/assets/img/shot8.png" alt="Image 2"></li>
   <li><img src="{{site.baseurl}}/assets/img/shot10.png" alt="Image 3"></li>
@@ -20,6 +20,19 @@ You will be in charge of everything that happens on, under, and after that count
   <li><img src="{{site.baseurl}}/assets/img/shot9.png" alt="Image 5"></li>
   <li><img src="{{site.baseurl}}/assets/img/shot2.png" alt="Image 6"></li>
 </ul>
+
+<div class="carousel-ui">
+  <button class="arrow prev" aria-label="Previous">◄</button>
+  <div class="dots">
+    <button aria-label="Slide 1" data-slide="0"></button>
+    <button aria-label="Slide 2" data-slide="1"></button>
+    <button aria-label="Slide 3" data-slide="2"></button>
+    <button aria-label="Slide 4" data-slide="3"></button>
+    <button aria-label="Slide 5" data-slide="4"></button>
+    <button aria-label="Slide 6" data-slide="5"></button>
+  </div>
+  <button class="arrow next" aria-label="Next">►</button>
+</div>
 
 ### :package: Manage Your Shop  
 Keep shelves filled with board-game classics, hot new TCG boosters, miniatures, and the most popular videogames. Use daily sales data and seasonal market trends to decide what—and how much—to reorder before popular items run out.
