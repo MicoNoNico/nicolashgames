@@ -12,12 +12,14 @@ Bits and Boards puts you behind the counter of a bustling neighbourhood game sto
 
 You will be in charge of everything that happens on, under, and after that counter. Stock the latest hits, charm every customer, and expand your thriving business.
 
-<div class="carousel">
-  <div><img src="{{site.baseurl}}/assets/img/image1.jpg" alt="Image 1"></div>
-  <div><img src="{{site.baseurl}}/assets/img/image2.jpg" alt="Image 2"></div>
-  <div><img src="{{site.baseurl}}/assets/img/image3.jpg" alt="Image 3"></div>
-  <!-- Add more slides as needed -->
-</div>
+<ul class="carousel">
+  <li><img src="{{site.baseurl}}/assets/img/shot1.png" alt="Image 1"></li>
+  <li><img src="{{site.baseurl}}/assets/img/shot8.png" alt="Image 2"></li>
+  <li><img src="{{site.baseurl}}/assets/img/shot10.png" alt="Image 3"></li>
+  <li><img src="{{site.baseurl}}/assets/img/shot3.png" alt="Image 4"></li>
+  <li><img src="{{site.baseurl}}/assets/img/shot9.png" alt="Image 5"></li>
+  <li><img src="{{site.baseurl}}/assets/img/shot2.png" alt="Image 6"></li>
+</ul>
 
 ### :package: Manage Your Shop  
 Keep shelves filled with board-game classics, hot new TCG boosters, miniatures, and the most popular videogames. Use daily sales data and seasonal market trends to decide what—and how much—to reorder before popular items run out.
