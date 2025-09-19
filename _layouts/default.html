@@ -8,14 +8,19 @@
   </div>
   
   {% include analytics.html %}
-  <script>
-    (function () {
-      const scroller = document.querySelector('.carousel');
-      const prev = document.querySelector('.carousel-ui .prev');
-      const next = document.querySelector('.carousel-ui .next');
-      const dots = Array.from(document.querySelectorAll('.carousel-ui .dots button'));
-      const slideW = () => scroller.clientWidth;
   
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const wrap = document.querySelector('.carousel-wrap');
+      if (!wrap) return;
+  
+      const scroller = wrap.querySelector('.carousel');
+      const prev = wrap.querySelector('.carousel-ui .prev');
+      const next = wrap.querySelector('.carousel-ui .next');
+      const dots = Array.from(wrap.querySelectorAll('.carousel-ui .dots button'));
+      if (!scroller || !prev || !next || !dots.length) return;
+  
+      const slideW = () => scroller.clientWidth;
       const idx = () => Math.round(scroller.scrollLeft / slideW());
       const go = (i) => {
         const clamped = Math.max(0, Math.min(i, dots.length - 1));
@@ -29,8 +34,9 @@
       dots.forEach((b, i) => b.addEventListener('click', () => go(i)));
       scroller.addEventListener('scroll', () => requestAnimationFrame(() => update()));
       update(0);
-    })();
+    });
   </script>
+  
   
 </body>
 </html>

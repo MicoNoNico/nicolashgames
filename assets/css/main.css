@@ -1014,7 +1014,7 @@ table tfoot td {
 }
 
 /* Fallback controls for browsers without ::scroll-button/::scroll-marker */
-.carousel { position: relative; }
+.carousel-wrap { position: relative; }
 
 .carousel-ui {
   position: absolute;
@@ -1025,6 +1025,7 @@ table tfoot td {
   align-items: center;
   gap: 12px;
   pointer-events: none; /* lets clicks pass unless explicitly enabled below */
+  z-index: 2;
 }
 
 .carousel-ui .arrow,
