@@ -886,6 +886,8 @@ table tfoot td {
 .wrapper {
   max-width: 1250px;
   position: relative;
+  margin: auto;
+  
 }
 
 .post, .article-page {
@@ -939,6 +941,7 @@ table tfoot td {
 .about {
   margin: 0 0 40px;
   text-align: center;
+  background-color: #fff;
 }
 
 .about .cover-author-image {
@@ -948,12 +951,12 @@ table tfoot td {
   -webkit-border-radius: 0;
           border-radius: 0;
   overflow: hidden;
-  background-color: #333030;
+  background-color: #fff;
 }
 
 .about img {
   width: 100%;
-  height: 100%;
+  height: auto;
   -webkit-border-radius: 0;
           border-radius: 0;
   -webkit-transition: -webkit-transform 0.35s;
@@ -1362,6 +1365,24 @@ a.newer-posts:hover {
   opacity: .8;
 }
 
+.embed-responsive {
+  position: relative;
+  height: 0;
+  padding-bottom: 24%;
+  overflow: hidden;
+  display: block;
+  max-width: 646px; /* NEW: Caps width at original iframe size */
+  margin: 20px auto; /* NEW: Centers the embed */
+}
+.embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important; /* NEW: Override inline width */
+  height: 100% !important; /* NEW: Override inline height */
+  border: none; /* NEW: Ensure no default border */
+}
+
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
@@ -1387,10 +1408,39 @@ a.newer-posts:hover {
   .post .post-content .post-title a {
     font-size: 21px;
   }
+  .embed-responsive {
+    padding-bottom: 40%;
+  }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
+  .wrap-content {
+    padding: 10px; /* MODIFIED: Reduced from 20px to match .content-box on mobile */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* NEW: Includes padding in width calc */
+    overflow-x: hidden; /* NEW: Hides any minor overflow */
+    margin: 0 auto; /* NEW: Centers the content container */
+  }
+
+  .article-page .page-content {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .wrap-content table {
+    font-size: 12px;
+    margin: 0 -10px;
+  }
+
+  .wrap-content iframe {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
   .sidebar {
     position: relative;
     display: -webkit-box;
@@ -1414,21 +1464,17 @@ a.newer-posts:hover {
     margin: 0 auto;
     max-width: 480px;
   }
+
   .sidebar footer {
     margin-bottom: 10px;
   }
+
   .about {
     text-align: center;
     max-width: 480px;
     margin: 10px auto auto;
   }
-  .about img {
-    width: 100px;
-    height: 100px;
-    -webkit-border-radius: 100%;
-            border-radius: 100%;
-    margin-bottom: 10px;
-  }
+
   .content-box {
     padding: 20px 10px;
     display: -webkit-box;
@@ -1448,8 +1494,26 @@ a.newer-posts:hover {
         -ms-flex-align: stretch;
             align-items: stretch;
   }
+
   .contact-title, .copyright {
     display: none;
+  }
+
+  .embed-responsive {
+    position: relative;
+    height: 0;
+    padding-bottom: 20%;
+    padding-top: 30px;
+    overflow: hidden;
+    display:block;
+  }
+
+  .embed-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important; 
+    height: 100% !important;
   }
 }
 
@@ -1479,5 +1543,8 @@ a.newer-posts:hover {
   }
   .post .post-content .post-title a {
     font-size: 21px;
+  }
+  .embed-responsive {
+    padding-bottom: 45%;
   }
 }

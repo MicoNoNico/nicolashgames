@@ -1,2 +1,33 @@
 <!-- Main Js -->
 <script src="{{site.baseurl}}/assets/js/main.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.carousel').slick({
+        // Basic options
+        infinite: true,          // Infinite looping
+        slidesToShow: 1,         // Show 1 slide at a time
+        slidesToScroll: 1,       // Scroll 1 slide at a time
+        autoplay: true,          // Auto-scroll
+        autoplaySpeed: 3000,     // 3 seconds per slide
+        arrows: true,            // Show next/prev arrows
+        dots: true,              // Show navigation dots below
+        responsive: [            // Mobile adjustments
+          {
+            breakpoint: 768,     // At ≤768px
+            settings: {
+              arrows: false,     // Hide arrows on mobile
+              dots: true         // Keep dots
+            }
+          },
+          {
+            breakpoint: 480,     // At ≤480px
+            settings: {
+              arrows: false,
+              dots: false        // Optional: Hide dots for very small screens
+            }
+          }
+        ]
+      });
+    });
+  </script>
