@@ -12,7 +12,7 @@ Bits and Boards puts you behind the counter of a bustling neighbourhood game sto
 
 You will be in charge of everything that happens on, under, and after that counter. Stock the latest hits, charm every customer, and expand your thriving business.
 
-<ul class="carousel">
+<ul class="carousel" id="my-carousel">
   <li><img src="{{site.baseurl}}/assets/img/shot1.png" alt="Image 1"></li>
   <li><img src="{{site.baseurl}}/assets/img/shot8.png" alt="Image 2"></li>
   <li><img src="{{site.baseurl}}/assets/img/shot10.png" alt="Image 3"></li>

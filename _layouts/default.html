@@ -8,5 +8,129 @@
   </div>
   
   {% include analytics.html %}
+  <script>
+    // Fallback for carousel navigation on unsupported browsers (e.g., iOS Safari, mobile Chrome)
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.getElementById('my-carousel');
+      if (!carousel) return;
+    
+      // Detect mobile (iOS Safari or small screen)
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    
+      if (!isMobile) return; // Skip on desktop
+    
+      const slides = carousel.querySelectorAll('li');
+      const totalSlides = slides.length;
+      if (totalSlides < 2) return; // No need for nav if single slide
+    
+      let currentSlide = 0;
+    
+      // Create arrows
+      const prevBtn = document.createElement('button');
+      prevBtn.innerHTML = '◄';
+      prevBtn.className = 'carousel-prev';
+      prevBtn.style.cssText = `
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+      `;
+      prevBtn.addEventListener('click', () => scrollToSlide(currentSlide - 1));
+    
+      const nextBtn = document.createElement('button');
+      nextBtn.innerHTML = '►';
+      nextBtn.className = 'carousel-next';
+      nextBtn.style.cssText = `
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+      `;
+      nextBtn.addEventListener('click', () => scrollToSlide(currentSlide + 1));
+    
+      // Create dots
+      const dotsContainer = document.createElement('div');
+      dotsContainer.style.cssText = `
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      `;
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.style.cssText = `
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          border: 2px solid white;
+          background: transparent;
+          cursor: pointer;
+          opacity: 0.7;
+          transition: background 0.3s;
+        `;
+        dot.addEventListener('click', () => scrollToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+    
+      // Append to carousel
+      carousel.style.position = 'relative';
+      carousel.appendChild(prevBtn);
+      carousel.appendChild(nextBtn);
+      carousel.appendChild(dotsContainer);
+    
+      // Scroll function
+      function scrollToSlide(index) {
+        currentSlide = (index + totalSlides) % totalSlides;
+        carousel.scrollTo({
+          left: currentSlide * carousel.offsetWidth,
+          behavior: 'smooth'
+        });
+        updateDots();
+      }
+    
+      function updateDots() {
+        const dots = dotsContainer.querySelectorAll('button');
+        dots.forEach((dot, i) => {
+          dot.style.background = i === currentSlide ? 'white' : 'transparent';
+          dot.style.opacity = i === currentSlide ? '1' : '0.7';
+        });
+      }
+    
+      // Initial update
+      updateDots();
+    
+      // Watch for scroll to update current slide
+      carousel.addEventListener('scroll', () => {
+        const scrollLeft = carousel.scrollLeft;
+        currentSlide = Math.round(scrollLeft / carousel.offsetWidth);
+        updateDots();
+      });
+    });
+    </script>
 </body>
 </html>

@@ -1013,6 +1013,16 @@ table tfoot td {
   background-color: black;
 }
 
+/* Fallback for mobile carousel buttons */
+.carousel-prev, .carousel-next {
+  position: absolute !important;
+  z-index: 10;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  opacity: 1 !important;
+}
+
 /* - - - - - - - - - - Home Page Styles - - - - - - - - - - */
 .sidebar {
   display: -webkit-box;
@@ -1650,6 +1660,11 @@ a.newer-posts:hover {
   .carousel::scroll-button(inline-end) {
     content: "►";
     left: calc(anchor(center) + 80px);
+  }
+
+  .carousel::scroll-button(*),
+  .carousel::scroll-marker-group {
+    display: none !important; /* Hide if browser supports but mobile issues persist */
   }
 
 }
