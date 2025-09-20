@@ -1409,6 +1409,8 @@ a.newer-posts:hover {
   margin: auto;
   text-transform: uppercase;
   border: 1px solid #263959;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
 }
 
 .tag-early-access {
@@ -1421,6 +1423,14 @@ a.newer-posts:hover {
 
 .tag-unity {
   background-color: #f5b5ff;
+}
+
+.tag-mobile {
+  background-color: #fff4b5;
+}
+
+.tag-released {
+  background-color: #ffb5b5;
 }
 
 /* - - - - - - - - - - Tag Styles - - - - - - - - - - */
@@ -1493,7 +1503,7 @@ a.newer-posts:hover {
   top: 0;
   left: 0;
   width: 100% !important;  
-  height: 100% !important; 
+  height: auto !important; 
   border: none;
 }
 

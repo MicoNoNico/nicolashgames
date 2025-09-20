@@ -2,8 +2,8 @@
 layout: post
 title: Bits and Boards
 date: 2017-09-13 13:32:20 +0300
-description: Game page for "Bits and Boards". # Add post description
-img: Store-Main-Capsule-1232-706.png # Add image post
+description: Bits and Boards puts you behind the counter of a bustling neighbourhood game store, managing everything that happens on, under and after that counter. 
+img: /bb/bb_banner.webp # Add image post
 fig-caption: # Add figcaption
 tags: [Early Access, PC, Unity]
 ---
@@ -14,12 +14,12 @@ You will be in charge of everything that happens on, under, and after that count
 
 <div class="carousel-wrap">
   <ul class="carousel">
-    <li><img src="{{site.baseurl}}/assets/img/shot1.png" alt="Image 1"></li>
-    <li><img src="{{site.baseurl}}/assets/img/shot8.png" alt="Image 2"></li>
-    <li><img src="{{site.baseurl}}/assets/img/shot10.png" alt="Image 3"></li>
-    <li><img src="{{site.baseurl}}/assets/img/shot3.png" alt="Image 4"></li>
-    <li><img src="{{site.baseurl}}/assets/img/shot9.png" alt="Image 5"></li>
-    <li><img src="{{site.baseurl}}/assets/img/shot2.png" alt="Image 6"></li>
+    <li><img src="{{site.baseurl}}/assets/img/bb/bb_shot1.webp" alt="Image 1"></li>
+    <li><img src="{{site.baseurl}}/assets/img/bb/bb_shot2.webp" alt="Image 2"></li>
+    <li><img src="{{site.baseurl}}/assets/img/bb/bb_shot3.webp" alt="Image 3"></li>
+    <li><img src="{{site.baseurl}}/assets/img/bb/bb_shot4.webp" alt="Image 4"></li>
+    <li><img src="{{site.baseurl}}/assets/img/bb/bb_shot5.webp" alt="Image 5"></li>
+    <li><img src="{{site.baseurl}}/assets/img/bb/bb_shot6.webp" alt="Image 6"></li>
   </ul>
 
   <div class="carousel-ui">
