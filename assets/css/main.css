@@ -1396,18 +1396,31 @@ a.newer-posts:hover {
   background-color: #ecf0f1;
 }
 
-.page-footer .page-tag a {
-  text-decoration: none;
+.page-tag {
+  display: inline;
+}
+
+.tag {
+  display: inline-block;
+  max-width: fit-content;
   font-size: 10px;
+  font-weight: bold;
   padding: 5px 10px;
-  margin-left: 5px;
-  color: #263959;
+  margin: auto;
   text-transform: uppercase;
   border: 1px solid #263959;
 }
 
-.page-footer .page-tag a:hover {
-  text-decoration: underline;
+.tag-early-access {
+  background-color: #94ffb0;
+}
+
+.tag-pc {
+ background-color: #94f8ff;
+}
+
+.tag-unity {
+  background-color: #f5b5ff;
 }
 
 /* - - - - - - - - - - Tag Styles - - - - - - - - - - */
@@ -1472,17 +1485,34 @@ a.newer-posts:hover {
   padding-bottom: 24%;
   overflow: hidden;
   display: block;
-  max-width: 646px; /* NEW: Caps width at original iframe size */
-  margin: 20px auto; /* NEW: Centers the embed */
+  max-width: 646px;  
+  margin: 20px auto; 
 }
 .embed-responsive iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100% !important; /* NEW: Override inline width */
-  height: 100% !important; /* NEW: Override inline height */
-  border: none; /* NEW: Ensure no default border */
+  width: 100% !important;  
+  height: 100% !important; 
+  border: none;
 }
+
+.carousel-ui {
+  display: none;
+}
+
+.emoji-title { 
+  display:flex;
+  vertical-align:baseline;
+}
+
+.emoji{
+  
+  height:1em; width:1em;
+  line-height:1.2;      
+  margin-right:.35ch;
+}
+
 
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
 /* Medium Devices, Desktops */
