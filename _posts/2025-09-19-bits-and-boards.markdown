@@ -58,6 +58,6 @@ As your store earns profits, it will level up and grant perk points. Spend these
 
 <br>
 
-<div class="embed-responsive">
-  <iframe src="https://store.steampowered.com/widget/3484190/" frameborder="0"></iframe>
+<div class="steam-embed">
+  <iframe src="https://store.steampowered.com/widget/3484190/" loading="lazy" frameborder="0"></iframe>
 </div>

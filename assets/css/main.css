@@ -1523,6 +1523,38 @@ a.newer-posts:hover {
   margin-right:.35ch;
 }
 
+.steam-embed{
+  position: relative;
+  width: 100%;
+  max-width: 646px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+/* modern: intrinsic ratio */
+@supports (aspect-ratio: 1) {
+  .steam-embed{ aspect-ratio: 646 / 190; }
+  .steam-embed iframe{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+/* fallback: padding-bottom hack (≈29.4%) */
+@supports not (aspect-ratio: 1) {
+  .steam-embed{ height: 0; padding-bottom: 29.4%; }
+  .steam-embed iframe{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
 
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
 /* Medium Devices, Desktops */
