@@ -913,6 +913,89 @@ table tfoot td {
   clear: both;
 }
 
+.about-title {
+  display: block;
+  width: 100%;      /* forces flex item to take full width */
+  flex: 0 0 100%;   /* absolutely forces a line break inside flexbox */
+  margin-bottom: 0.5em;
+}
+
+.about-gallery {
+  width: fit-content;      /* shrink to the width of the grid rows */
+  margin: 0 auto;          /* center the whole block */
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center both rows horizontally */
+  gap: 1rem;
+}
+
+.gallery-row {
+  display: grid;
+  grid-template-columns: repeat(4, auto); /* always 4 per row */
+  gap: 12px;
+  justify-content: center;  /* center the 4 images within the row */
+}
+
+.about-img {
+  background-color: #2b2b2b;
+  border-radius: 12px;
+  padding: 6px;
+  width: 6rem;    /* your chosen size */
+  height: 6rem;   /* enforce square shape */
+  object-fit: cover;
+  display: block;
+}
+
+/* CSS */
+.button-6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
 /* - - - - - - - - - - Carousel Styles - - - - - - - - - - -*/
 
 .carousel {
@@ -1422,15 +1505,38 @@ a.newer-posts:hover {
 }
 
 .tag-unity {
-  background-color: #f5b5ff;
+  background-color: #ee80ff;
+  color: white;
 }
 
 .tag-mobile {
-  background-color: #fff4b5;
+  background-color: #ffa64d;
+  color: white;
 }
 
 .tag-released {
-  background-color: #ffb5b5;
+  background-color: #ff8080;
+  color: white;
+}
+
+.tag-steam {
+  background-color: #314d63;
+  color: white;
+}
+
+.tag-aseprite {
+  background-color: #5c5059;
+  color: white;
+}
+
+.tag-github {
+  background-color: #5968ba;
+  color: white;
+}
+
+.tag-blender {
+  background-color: #ff9100;
+  color: white;
 }
 
 /* - - - - - - - - - - Tag Styles - - - - - - - - - - */

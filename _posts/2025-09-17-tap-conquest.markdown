@@ -5,7 +5,7 @@ date: 2017-09-13 13:32:20 +0300
 description: Conquer towers with precision as you craft powerful decks, customize your loadouts, and unleash strategies uniquely tailored to your playstyle.
 img: /tc/tc_banner.webp # Add image post
 fig-caption: # Add figcaption
-tags: [Released, Mobile, Unity]
+tags: [Released, Mobile, Unity, Aseprite, GitHub]
 ---
 
 Tap Conquest blends the captivating essence of classic tower-conquering games with the strategic depth of deck-building and customizable loadouts.

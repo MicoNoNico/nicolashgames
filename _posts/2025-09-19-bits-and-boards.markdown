@@ -5,7 +5,7 @@ date: 2017-09-13 13:32:20 +0300
 description: Bits and Boards puts you behind the counter of a bustling neighbourhood game store, managing everything that happens on, under and after that counter. 
 img: /bb/bb_banner.webp # Add image post
 fig-caption: # Add figcaption
-tags: [Early Access, PC, Unity]
+tags: [Released, Steam, Unity, GitHub, Blender]
 ---
 
 Bits and Boards puts you behind the counter of a bustling neighbourhood game store.  

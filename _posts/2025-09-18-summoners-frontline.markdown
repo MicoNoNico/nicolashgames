@@ -5,7 +5,7 @@ date: 2017-09-13 13:32:20 +0300
 description: Master the art of unit synergy, timing, and resource management to build and upgrade your base, creating a dynamic force tailored to your playstyle.
 img: /sf/sf_banner.webp # Add image post
 fig-caption: # Add figcaption
-tags: [Released, Mobile, Unity]
+tags: [Released, Mobile, Unity, GitHub]
 ---
 
 With a blend of fast-paced action and deep strategic planning, you'll need to master the art of unit synergy, timing, and resource management to build and upgrade your base, creating a dynamic force tailored to your playstyle.
