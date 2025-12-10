@@ -2,7 +2,7 @@ title: Nicolash Games
 description: > # this means to ignore newlines until "baseurl:"
   Indie game developer crafting strategy and management games.
 permalink: ':title/'
-baseurl: "niccolochiodo.com"
+baseurl: "/"
 url: "https://micononico.github.io"
 site-twitter: #if your site has a twitter account, enter it here
 
