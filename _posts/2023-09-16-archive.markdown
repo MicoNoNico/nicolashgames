@@ -1,0 +1,75 @@
+---
+layout: post
+title: Archive
+date: 2017-09-13 13:32:20 +0300
+description: Archive of some old unreleased projects developed during my university study or internships.
+img: /archive/binders-4-3.webp # Add image post
+fig-caption: # Add figcaption
+tags: []
+---
+
+<br>
+<h2>Enemis With Benefits</h2>
+#2022 #Multiplayer #Unity
+
+<video class="carousel-video" controls>
+  <source src="{{site.baseurl}}/assets/img/archive/ewb-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag
+</video>
+
+<h3 class="emoji-title"> <span class="emoji">:package:</span> Race To The Top! </h3>
+In "Enemies with Benefits" the Players compete against each other through various interactions which require either cooperation or betrayal.
+
+Depending on the situation, players may decide to help each other out or try to win solo by impairing others at every turn.The game features an active ragdoll system, giving them a very “goofy” way of moving. 
+
+The movement system itself is physics based and makes full use of the ragdoll to function. The game maps are randomly generated every session.
+
+<br>
+<hr>
+<br>
+
+<h2>Escapod</h2>
+#2022 #OperaGX #GameMaker #GameJam
+
+<video class="carousel-video" controls>
+  <source src="{{site.baseurl}}/assets/img/archive/escapod-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag
+</video>
+
+
+<h3 class="emoji-title"> <span class="emoji">:package:</span>Keep Moving!</h3>
+"Escapod" was created as an entry for the 2022 Opera GX game jam.
+
+The theme of the event was "Keep Moving!"
+
+The event lasted about a day and the game was created using Game Maker Studio as a requirement.
+
+<a href="https://gx.games/games/kk5imy/escapod/" target="_blank">
+  <button type="button" class="button-6" id="opera-button" role="button">Play on Opera</button>
+</a>
+
+<br>
+<hr>
+<br>
+
+<h2>Demolition Men</h2>
+#2021 #Multiplayer #Unity
+
+<div class="carousel-wrap">
+  <ul class="carousel">
+    <li><img src="{{site.baseurl}}/assets/img/archive/demomen-poster.png" alt="Image 2"></li>
+    <li><video class="carousel-video" controls>
+      <source src="{{site.baseurl}}/assets/img/archive/demomen-demo.mp4" type="video/mp4">
+      Your browser does not support the video tag
+    </video></li>
+  </ul>
+
+  <div class="carousel-ui">
+    <button class="arrow prev" aria-label="Previous">◄</button>
+    <div class="dots">
+      <button aria-label="Slide 1" data-slide="0"></button>
+      <button aria-label="Slide 2" data-slide="1"></button>
+    </div>
+    <button class="arrow next" aria-label="Next">►</button>
+  </div>
+</div>
