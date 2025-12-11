@@ -17,7 +17,7 @@ tags: []
   Your browser does not support the video tag
 </video>
 
-<h3 class="emoji-title"> <span class="emoji">:package:</span> Race To The Top! </h3>
+<h3 class="emoji-title"> <span class="emoji">:runner:</span> Race To The Top! </h3>
 In "Enemies with Benefits" the Players compete against each other through various interactions which require either cooperation or betrayal.
 
 Depending on the situation, players may decide to help each other out or try to win solo by impairing others at every turn.The game features an active ragdoll system, giving them a very “goofy” way of moving. 
@@ -37,7 +37,7 @@ The movement system itself is physics based and makes full use of the ragdoll to
 </video>
 
 
-<h3 class="emoji-title"> <span class="emoji">:package:</span>Keep Moving!</h3>
+<h3 class="emoji-title"> <span class="emoji">:alien:</span>Keep Moving!</h3>
 "Escapod" was created as an entry for the 2022 Opera GX game jam.
 
 The theme of the event was "Keep Moving!"
