@@ -1,0 +1,15 @@
+# Patch notes manifest for Bits and Boards - Game Store Simulator
+# One markdown filename per line, NEWEST version first.
+# Blank lines and lines starting with '#' are ignored.
+# To add a release: create patchnotes/vX.Y.Z.md and prepend its filename here.
+v0.7.0.md
+v0.6.9.md
+v0.6.8.md
+v0.6.7.md
+v0.6.5.md
+v0.6.3.md
+v0.6.0.md
+v0.5.5.md
+v0.5.0.md
+v0.4.5.md
+v0.4.0.md

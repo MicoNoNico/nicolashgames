@@ -1,0 +1,180 @@
+---
+layout: main
+title: Patch Notes
+permalink: /patchnotes/page/
+description: Update history and patch notes for Bits and Boards - Game Store Simulator.
+---
+
+<!--
+  Human-facing patch notes page.
+  Single source of truth: this page fetches the SAME files the game reads
+  (patchnotes/index.txt + patchnotes/vX.Y.Z.md) and renders them client-side.
+  Do NOT paste note content into this file.
+
+  NOTE: this page lives at /patchnotes/page/ so it does not collide with the
+  raw data folder served at /patchnotes/ (index.txt, vX.Y.Z.md).
+-->
+
+<section class="patchnotes">
+  <h1 class="patchnotes-title">Patch Notes</h1>
+  <p class="patchnotes-intro">
+    Update history for <strong>Bits and Boards &ndash; Game Store Simulator</strong>.
+    Click a version to expand its notes.
+  </p>
+
+  <div id="patchnotes-list" class="patchnotes-list" aria-live="polite">
+    <p class="patchnotes-status">Loading patch notes&hellip;</p>
+  </div>
+</section>
+
+<!-- Markdown renderer (pinned) -->
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script>
+(function () {
+  // Base path of the raw data folder the game also uses.
+  // relative_url respects site.baseurl so this works under a project path too.
+  var BASE = "{{ '/patchnotes/' | relative_url }}";
+  var listEl = document.getElementById('patchnotes-list');
+
+  function setStatus(msg, isError) {
+    listEl.innerHTML = '<p class="patchnotes-status' +
+      (isError ? ' patchnotes-error' : '') + '">' + msg + '</p>';
+  }
+
+  function labelFromFilename(name) {
+    return name.replace(/\.md$/i, '');
+  }
+
+  // Parse manifest: one filename per line, skip blanks and '#' comments.
+  function parseManifest(text) {
+    return text.split(/\r?\n/)
+      .map(function (l) { return l.trim(); })
+      .filter(function (l) { return l && l.charAt(0) !== '#'; });
+  }
+
+  function renderMarkdown(md) {
+    if (window.marked) {
+      // marked >= 4 exposes marked.parse
+      return (typeof marked.parse === 'function') ? marked.parse(md) : marked(md);
+    }
+    // Fallback: escape and show as preformatted text.
+    var d = document.createElement('div');
+    d.textContent = md;
+    return '<pre>' + d.innerHTML + '</pre>';
+  }
+
+  function buildSection(filename) {
+    var details = document.createElement('details');
+    details.className = 'patchnote';
+
+    var summary = document.createElement('summary');
+    summary.textContent = labelFromFilename(filename);
+    details.appendChild(summary);
+
+    var body = document.createElement('div');
+    body.className = 'patchnote-body';
+    body.innerHTML = '<p class="patchnotes-status">Loading&hellip;</p>';
+    details.appendChild(body);
+
+    var loaded = false;
+    details.addEventListener('toggle', function () {
+      if (!details.open || loaded) return;
+      loaded = true; // fetch once, on first expand
+      fetch(BASE + filename, { cache: 'no-cache' })
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.text();
+        })
+        .then(function (md) { body.innerHTML = renderMarkdown(md); })
+        .catch(function (err) {
+          loaded = false; // allow retry on next expand
+          body.innerHTML = '<p class="patchnotes-status patchnotes-error">' +
+            'Could not load this version (' + err.message + ').</p>';
+        });
+    });
+
+    return details;
+  }
+
+  fetch(BASE + 'index.txt', { cache: 'no-cache' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    })
+    .then(function (text) {
+      var files = parseManifest(text);
+      if (!files.length) { setStatus('No patch notes available yet.'); return; }
+      listEl.innerHTML = '';
+      files.forEach(function (f, i) {
+        var section = buildSection(f);
+        if (i === 0) section.open = true; // newest version expanded by default
+        listEl.appendChild(section);
+      });
+    })
+    .catch(function (err) {
+      setStatus('Could not load patch notes (' + err.message + ').', true);
+    });
+})();
+</script>
+
+<style>
+  .patchnotes { max-width: 46rem; }
+  .patchnotes-title { margin-bottom: .25rem; }
+  .patchnotes-intro { color: #7a7a7a; margin-top: 0; margin-bottom: 1.75rem; }
+
+  .patchnote {
+    border: 1px solid #e6e8ec;
+    border-radius: .4rem;
+    margin-bottom: .75rem;
+    background: #ffffff;
+    overflow: hidden;
+  }
+  .patchnote > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: .85rem 1.1rem;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #263959;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 150ms ease;
+  }
+  .patchnote > summary:hover { background: #f5f7fa; }
+  .patchnote > summary::-webkit-details-marker { display: none; }
+  .patchnote > summary::after {
+    content: '\002B';            /* + */
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #a0a0a0;
+    margin-left: 1rem;
+    transition: transform 150ms ease;
+  }
+  .patchnote[open] > summary { border-bottom: 1px solid #eef0f3; }
+  .patchnote[open] > summary::after { content: '\2212'; } /* − */
+
+  .patchnote-body { padding: .35rem 1.1rem 1rem; color: #515151; }
+  .patchnote-body h1,
+  .patchnote-body h2,
+  .patchnote-body h3 {
+    font-family: 'PT Serif', serif;
+    color: #263959;
+    margin: 1rem 0 .4rem;
+    font-size: 1.05rem;
+  }
+  .patchnote-body ul { padding-left: 1.25rem; margin: .4rem 0; }
+  .patchnote-body li { margin: .2rem 0; }
+  .patchnote-body a { color: #263959; text-decoration: underline; }
+  .patchnote-body em { color: #7a7a7a; }
+  .patchnote-body code {
+    background: #f2f4f6;
+    padding: .1rem .35rem;
+    border-radius: .25rem;
+    font-size: .9em;
+  }
+
+  .patchnotes-status { color: #a0a0a0; font-style: italic; }
+  .patchnotes-error { color: #b23b3b; }
+</style>
